@@ -12,8 +12,8 @@ class MyTestCase(unittest.TestCase):  # Accessing the methods
     def test_instantiate_calculator(self):
         self.assertIsInstance(self.calobject, Calculator)
 
-    def test_add_method_calculator(self):
-        test_data = CsvReader('./src/csvfiles/Unit Test Addition.csv').data
+    def test_addition_calculator(self):
+        test_data = CsvReader('./src/Unit Test Addition.csv').data
         for row in test_data:
             self.assertEqual(self.calobject.add(row['Value 1'], row['Value 2']), int(row['Result']))
             self.assertEqual(self.calobject.result, int(row['Result']))

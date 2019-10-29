@@ -3,6 +3,7 @@ def addition_of_two_numbers(num1, num2):
     num2 = int(num2)
     return num1 + num2
 
+
 class Calculator:
     result = 0
 
