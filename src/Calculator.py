@@ -1,8 +1,12 @@
-def addition_of_two_numbers(num1, num2):
-    num1 = int(num1)
-    num2 = int(num2)
-    return num1 + num2
+def addition_of_two_numbers(a, b):
+    a = int(a)
+    b = int(b)
+    return a + b
 
+def subtraction_of_two_number(a, b):
+    a = int(a)
+    b = int(b)
+    return b - a
 
 class Calculator:
     result = 0
@@ -10,6 +14,10 @@ class Calculator:
     def __init__(self):
         pass
 
-    def add(self, num1, num2):
-        self.result = addition_of_two_numbers(num1, num2)
+    def add(self, a, b):
+        self.result = addition_of_two_numbers(a, b)
+        return self.result
+
+    def subtract(self, a, b):
+        self.result = subtraction_of_two_number(a, b)
         return self.result
