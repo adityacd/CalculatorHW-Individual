@@ -8,6 +8,10 @@ def subtraction_of_two_number(a, b):
     b = int(b)
     return b - a
 
+def multiplication_of_two_number(num1, num2):
+    c = num1 * num2
+    return c
+
 class Calculator:
     result = 0
 
@@ -20,4 +24,8 @@ class Calculator:
 
     def subtract(self, a, b):
         self.result = subtraction_of_two_number(a, b)
+        return self.result
+
+    def multiply(self, num1, num2):
+        self.result = multiplication_of_two_number(num1, num2)
         return self.result
