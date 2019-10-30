@@ -21,6 +21,10 @@ def square_of_a_number(num1):
     num1 = int(num1)
     return num1 ** 2
 
+def root(num1):
+    num1 = int(num1)
+    return round(num1 ** 0.5, 8)
+
 class Calculator:
     result = 0
 
@@ -45,4 +49,8 @@ class Calculator:
 
     def square(self, num1):
         self.result = square_of_a_number(num1)
+        return self.result
+
+    def square_root(self, num1):
+        self.result = root(num1)
         return self.result

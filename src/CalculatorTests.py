@@ -30,7 +30,6 @@ class MyTestCase(unittest.TestCase):  # Accessing the methods
             self.assertEqual(self.calobject.subtract(x, y), expect_result)
             self.assertEqual(self.calobject.result, expect_result)
 
-
     def test_multiply_method_calculator(self):
         test_data = CsvReader('./src/Unit Test Multiplication.csv').data
         for row in test_data:
@@ -45,9 +44,9 @@ class MyTestCase(unittest.TestCase):  # Accessing the methods
         for row in test_data:
             x = float(row['Value 1'])
             y = float(row['Value 2'])
-            z = float(row['Result'])
-            self.assertEqual(self.calobject.divide(x, y), round(z, 7))
-            self.assertEqual(self.calobject.result, round(z, 7))
+            expect_result = float(row['Result'])
+            self.assertEqual(self.calobject.divide(x, y), round(expect_result, 7))
+            self.assertEqual(self.calobject.result, round(expect_result, 7))
 
     def test_square_method_calculator(self):
         test_data = CsvReader('./src/Unit Test Square.csv').data
@@ -57,6 +56,13 @@ class MyTestCase(unittest.TestCase):  # Accessing the methods
             self.assertEqual(self.calobject.square(x), expect_result)
             self.assertEqual(self.calobject.result, expect_result)
 
+    def test_sqrt_method_calculator(self):
+        test_data = CsvReader('./src/Unit Test Square Root.csv').data
+        for row in test_data:
+            x = float(row['Value 1'])
+            expect_result = float(row['Result'])
+            self.assertEqual(self.calobject.square_root(x), round(expect_result, 8))
+            self.assertEqual(self.calobject.result, round(expect_result, 8))
 
 if __name__ == '__main__':  # This is just causing the unitttest to run
     unittest.main()
