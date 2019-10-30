@@ -17,6 +17,10 @@ def division_of_two_numbers(num1, num2):
     num2 = int(num2)
     return round(num2 / num1, 7)
 
+def square_of_a_number(num1):
+    num1 = int(num1)
+    return num1 ** 2
+
 class Calculator:
     result = 0
 
@@ -37,4 +41,8 @@ class Calculator:
 
     def divide(self, num1, num2):
         self.result = round(division_of_two_numbers(num1, num2), 7)
+        return self.result
+
+    def square(self, num1):
+        self.result = square_of_a_number(num1)
         return self.result

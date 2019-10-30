@@ -16,9 +16,7 @@ class MyTestCase(unittest.TestCase):  # Accessing the methods
         test_data = CsvReader('./src/Unit Test Addition.csv').data
         for row in test_data:
             x = row['Value 1']
-            # the second column in the text line is y value.
             y = row['Value 2']
-            # the third column in the text line is (x + y) value.
             expect_result = int(row['Result'])
             self.assertEqual(self.calobject.add(x, y), expect_result)
             self.assertEqual(self.calobject.result, expect_result)
@@ -27,27 +25,20 @@ class MyTestCase(unittest.TestCase):  # Accessing the methods
         test_data = CsvReader('./src/Unit Test Subtraction.csv').data
         for row in test_data:
             x = row['Value 1']
-            # the second column in the text line is y value.
             y = row['Value 2']
-            # the third column in the text line is (x + y) value.
             expect_result = int(row['Result'])
             self.assertEqual(self.calobject.subtract(x, y), expect_result)
             self.assertEqual(self.calobject.result, expect_result)
-            #self.assertEqual(self.calobject.subtract(row['Value 1'], row['Value 2']), int(row['Result']))
-            #self.assertEqual(self.calobject.result, int(row['Result']))
+
 
     def test_multiply_method_calculator(self):
         test_data = CsvReader('./src/Unit Test Multiplication.csv').data
         for row in test_data:
             x = int(row['Value 1'])
-            # the second column in the text line is y value.
             y = int(row['Value 2'])
-            # the third column in the text line is (x + y) value.
             expect_result = int(row['Result'])
             self.assertEqual(self.calobject.multiply(x, y), expect_result)
             self.assertEqual(self.calobject.result, expect_result)
-            #self.assertEqual(self.calobject.multiply(int(row['Value 1']), int(row['Value 2'])), int(row['Result']))
-            #self.assertEqual(self.calobject.result, int(row['Result']))
 
     def test_divide_method_calculator(self):
         test_data = CsvReader('./src/Unit Test Division.csv').data
@@ -57,6 +48,15 @@ class MyTestCase(unittest.TestCase):  # Accessing the methods
             z = float(row['Result'])
             self.assertEqual(self.calobject.divide(x, y), round(z, 7))
             self.assertEqual(self.calobject.result, round(z, 7))
+
+    def test_square_method_calculator(self):
+        test_data = CsvReader('./src/Unit Test Square.csv').data
+        for row in test_data:
+            x = int(row['Value 1'])
+            expect_result = int(row['Result'])
+            self.assertEqual(self.calobject.square(x), expect_result)
+            self.assertEqual(self.calobject.result, expect_result)
+
 
 if __name__ == '__main__':  # This is just causing the unitttest to run
     unittest.main()
