@@ -1,3 +1,5 @@
+# Static methods
+
 def addition_of_two_numbers(num1, num2):
     num1 = int(num1)
     num2 = int(num2)
@@ -25,13 +27,13 @@ def root(num1):
     num1 = int(num1)
     return round(num1 ** 0.5, 8)
 
-class Calculator:
+class Calculator:                                               # Class named 'Calculator'
     result = 0
 
-    def __init__(self):
+    def __init__(self):                                         # Class constructor
         pass
 
-    def add(self, num1, num2):
+    def add(self, num1, num2):                                  # Below are the Functions
         self.result = addition_of_two_numbers(num1, num2)
         return self.result
 
