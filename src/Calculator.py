@@ -46,7 +46,7 @@ class Calculator:                                               # Class named 'C
         return self.result
 
     def divide(self, num1, num2):
-        self.result = round(division_of_two_numbers(num1, num2), 7)
+        self.result = division_of_two_numbers(num1, num2)
         return self.result
 
     def square(self, num1):
